@@ -1,3 +1,10 @@
+function getDayNight(date, timezone) {
+    const options = { timeZone: timezone, hour: '2-digit', hour12: false };
+    let hour = parseInt(new Intl.DateTimeFormat('en-US', options).format(date), 10);
+    if (hour === 24) hour = 0;
+    return hour >= 6 && hour < 18 ? { label: 'MORNING', cls: 'morning' } : { label: 'NIGHT', cls: 'night' };
+}
+
 function updateClocks() {
     const clockCards = document.querySelectorAll('.clock-card');
     
@@ -34,6 +41,18 @@ function updateClocks() {
             // Update DOM
             timeElement.textContent = timeString;
             dateElement.textContent = dateString;
+            
+            // Day/Night badge
+            const dayNight = getDayNight(now, timezone);
+            let badge = card.querySelector('.day-night-badge');
+            if (!badge) {
+                badge = document.createElement('div');
+                badge.className = 'day-night-badge';
+                card.appendChild(badge);
+            }
+            badge.textContent = dayNight.label;
+            card.classList.remove('morning', 'night');
+            card.classList.add(dayNight.cls);
             
         } catch (error) {
             console.error(`Error updating clock for ${timezone}:`, error);

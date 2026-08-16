@@ -121,6 +121,39 @@ header p {
     color: var(--text-secondary);
 }
 
+.day-night-badge {
+    align-self: center;
+    margin-top: 1rem;
+    padding: 0.35rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.clock-card.morning {
+    border-color: rgba(251, 191, 36, 0.4);
+    background: linear-gradient(180deg, rgba(251, 146, 60, 0.12), rgba(255, 255, 255, 0.05));
+}
+
+.clock-card.morning .day-night-badge {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+.clock-card.night {
+    border-color: rgba(99, 102, 241, 0.4);
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.4));
+}
+
+.clock-card.night .day-night-badge {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
 footer {
     text-align: center;
     margin-top: 3rem;
