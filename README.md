@@ -1,8 +1,8 @@
-# GlobalTime — Live World Clock Dashboard
+# GlobalTime - Live World Clock Dashboard
 
-A simple world clock dashboard built with **HTML, CSS and JavaScript**. It shows the current local time and date for 10 countries, updating every second — no libraries, no APIs, no build tools.
+A simple world clock dashboard built with HTML, CSS, and JavaScript. It shows the current local time and date for 10 countries, updating every second - no libraries, no APIs, no build tools.
 
-Each card also shows a **MORNING** or **NIGHT** badge and changes its color theme based on the local hour of that city.
+Each card also shows a MORNING or NIGHT badge and changes its color theme based on the local hour of that city.
 
 ## Features
 
@@ -24,69 +24,40 @@ Each card also shows a **MORNING** or **NIGHT** badge and changes its color them
 | Japan (Tokyo) | `Asia/Tokyo` |
 | UAE (Dubai) | `Asia/Dubai` |
 | Australia (Sydney) | `Australia/Sydney` |
-| Canada (Toronto) | `America/Toronto` |
-| Saudi Arabia (Riyadh) | `Asia/Riyadh` |
 | Germany (Berlin) | `Europe/Berlin` |
-| China (Shanghai) | `Asia/Shanghai` |
+| Brazil (Sao Paulo) | `America/Sao_Paulo` |
+| India (Kolkata) | `Asia/Kolkata` |
+| Canada (Toronto) | `America/Toronto` |
 
 ## Tech Stack
 
 - HTML5
-- CSS3 (Grid, variables, gradients, backdrop blur)
-- JavaScript (ES6)
-- Google Fonts — Poppins and JetBrains Mono
+- CSS3
+- Vanilla JavaScript (Intl API)
 
 ## Project Structure
 
 ```
 globaltime-world-clock/
-├── index.html   # Clock cards and page layout
-├── style.css    # Theme, grid and responsive styles
-├── script.js    # Time formatting and live updates
-└── README.md
+├── index.html   # Markup
+├── style.css    # Styling
+└── script.js    # Clock logic
 ```
 
-## Run Locally
+## Getting Started
 
-Open `index.html` in any modern browser. That's it.
+1. Clone or download this repository.
+2. Open `index.html` in any modern browser.
+3. Times update automatically every second.
 
-Or clone the repository:
+## Live Demo
 
-```bash
-git clone https://github.com/codewithshariqofficial/globaltime-world-clock.git
-cd globaltime-world-clock
-```
+https://globaltime-world-clock.vercel.app
 
-For development, you can use the **Live Server** extension in VS Code.
+## License
 
-## Add a New Country
-
-Add a card inside `#clock-grid` in `index.html`:
-
-```html
-<div class="clock-card" data-timezone="Europe/Paris">
-    <div class="country-name">France (Paris)</div>
-    <div class="time">00:00:00</div>
-    <div class="date">Loading...</div>
-</div>
-```
-
-The JavaScript picks up the new card automatically. Use any valid [IANA timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
-
-## Customize the Theme
-
-Colors are defined as CSS variables at the top of `style.css`:
-
-```css
-:root {
-    --bg-color: #0f172a;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent-color: #38bdf8;
-}
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Author
 
-**Shariq Shahid** — [@codewithshariqofficial](https://github.com/codewithshariqofficial)
+**Code With Shariq Official** - [GitHub](https://github.com/codewithshariqofficial)
